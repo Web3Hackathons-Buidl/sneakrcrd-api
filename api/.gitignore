@@ -1,0 +1,10 @@
+env/
+.idea/
+credentials/*
+.env
+*/output/shoe/*
+*/output/box/*
+*/output/custom/*
+*/output/piece/*
+__pycache__
+.DS_Store

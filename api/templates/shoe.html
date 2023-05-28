@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Sneakrcred</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+
+	<style type="text/css">
+		.logo{	
+			width: 35%;
+		}
+		.graphic {
+			margin-top: 5%;
+			width: 25%;
+		}
+		table{
+			margin-left: auto;
+			margin-right: auto;
+			background-color: darkgrey;
+			color: white;
+		}
+		td {
+			padding: 7px;
+			font-size: 1rem;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<img id="shoe" src="http://sneakrcred.s3.amazonaws.com/{{data.token_id}}.png" alt="sneakrcred" class="graphic">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<img src="/static/SneakrCred2.png" alt="sneakrcred" class="logo">
+			</div>
+		</div>
+		<script type="text/javascript">
+			function go() {
+				if(document.getElementById("token_id1").value){
+					window.open("https://shrouded-inlet-54043.herokuapp.com/api/testpage/" + document.getElementById("token_id1").value);
+				}
+			}
+		</script>
+	<div class="row"></div>
+	 <div class="col-sm-6 offset-sm-4 text-center">
+		<form class="form-inline align-content-center">
+  			<div class="form-group mb-2">
+    			<label for="token_id" class="sr-only"></label>
+    			<input type="text" readonly class="form-control-plaintext" id="token_id" value="Token ID:">
+  			</div>
+  			<div class="form-group mb-2">
+    			 <input class="form-control" id="token_id1" title="ie. 0x23f or 1234" value="0">
+  			</div>
+	
+  		<button type="submit" class="btn btn-dark mb-2" onclick="go()")>Create Sneakr</button>
+		</form>
+	</div>
+
+	</div>
+
+		<div>
+	  <table>
+	  	<tr>
+			<td>Name: {{data.name}}</td>
+			<td>Sole: {{data.sole}}</td>
+			<td>Panels: {{data.body}}</td>
+			<td>Swoosh: {{data.swoosh}}</td>
+			<td>Toe: {{data.toe}}</td>
+			<td>Top: {{data.top}}</td>
+			<td>Back: {{data.back}}</td>
+		</tr>	
+		<tr>
+			<td>Boost: {{data.boost}}</td>
+		</tr>
+		<tr>	
+			<td>Token ID: {{data.token_id}}</td>
+			<!-- <p>COLORS: {{colors}}</p> -->
+		</tr>
+		<tr>
+			<td><a href="{{data.external_url}}"> Image URL: {{data.external_url}}</a></td>
+		</tr>
+
+	  </table>
+	</div>
+	</div>
+</body>
